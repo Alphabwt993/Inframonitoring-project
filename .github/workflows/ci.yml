@@ -1,0 +1,27 @@
+name: CI 
+
+on:
+  pull_request:
+    branches:
+      - main
+      
+  workflow_dispatch:    
+  
+jobs:
+  test-scripts:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Make scripts executable
+        run: chmod +x check_api.sh analyze_logs.sh
+
+      - name: Check Bash syntax
+        run: |
+          bash -n check_api.sh
+          bash -n analyze_logs.sh
+
+      - name: Test check_api.sh
+        run: ./check_api.sh https://httpbin.org/status/200
