@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [ -z "$1" ]; then
 	echo "Не указан URL API."
 	echo "Использование: $0 <URL>"
