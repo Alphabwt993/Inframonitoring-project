@@ -50,7 +50,7 @@ docker compose up -d
 Сделайте скрипты исполняемыми и запустите их для проверки:
 ```bash
 chmod +x check_api.sh analyze_logs.sh
-./check_api.sh <URL>
-./check_api.sh <URL>/status/XXX
+./check_api.sh URL
+./check_api.sh URL/status/XXX
 ./analyze_logs.sh
 ```
